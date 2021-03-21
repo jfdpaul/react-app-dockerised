@@ -33,7 +33,7 @@ jobs:
     steps:
     - name: Install essentials
       run: |-
-        apt-get install build-essential
+        sudo apt-get install build-essential
     - name: Checkout
       uses: actions/checkout@v2
 
