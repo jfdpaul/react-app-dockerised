@@ -1,6 +1,10 @@
 # stage1 as builder
 FROM node:10-alpine as builder
 
+WORKDIR /react-app-dockerised
+
+ENV PATH /react-app-dockerised/node_modules/.bin:$PATH
+
 # copy the package.json to install dependencies
 COPY package*.json ./
 
@@ -10,8 +14,6 @@ RUN mkdir /react-app-dockerised
 RUN mv ./node_modules /react-app-dockerised
 
 COPY . /react-app-dockerised
-
-WORKDIR /react-app-dockerised
 
 # Build the project and copy the files
 RUN npm run build
