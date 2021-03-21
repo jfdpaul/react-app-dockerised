@@ -31,9 +31,6 @@ jobs:
     environment: production
 
     steps:
-    - name: Install essentials
-      run: |-
-        sudo apt-get install build-essential
     - name: Checkout
       uses: actions/checkout@v2
 

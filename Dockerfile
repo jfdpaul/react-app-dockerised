@@ -10,14 +10,11 @@ COPY package*.json ./
 
 # Install the dependencies and make the folder
 RUN npm install 
-RUN mkdir /react-app-dockerised 
-RUN mv ./node_modules /react-app-dockerised
 
-COPY . /react-app-dockerised
+COPY . ./
 
 # Build the project and copy the files
 RUN npm run build
-
 
 FROM nginx:alpine
 
